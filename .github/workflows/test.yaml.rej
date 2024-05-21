@@ -1,0 +1,21 @@
+diff a/.github/workflows/test.yaml b/.github/workflows/test.yaml	(rejected hunks)
+@@ -21,13 +23,16 @@ jobs:
+       fail-fast: false
+       matrix:
+         include:
+-          - os: ubuntu-latest
+-            python: "3.9"
+           - os: ubuntu-latest
+             python: "3.10"
+           - os: ubuntu-latest
+-            python: "3.10"
++            python: "3.12"
++          - os: ubuntu-latest
++            python: "3.12"
+             pip-flags: "--pre"
++            name: PRE-RELEASE DEPENDENCIES
++
++    name: ${{ matrix.name }} Python ${{ matrix.python }}
+ 
+     env:
+       OS: ${{ matrix.os }}
